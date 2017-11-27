@@ -1,1 +1,11 @@
 <h2>East Cost Camping</h2>
+
+
+<%= link_to "Create New Post", new_post_path %>
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+      <%= link_to post.title, post%>
+    </li>
+  <% end %>
+</ul>
