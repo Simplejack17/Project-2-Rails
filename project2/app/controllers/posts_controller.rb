@@ -21,15 +21,21 @@ class PostsController < ApplicationController
   end
 
   def update
-
+    @post = Post.find(params[:id])
+    @post[:title] = params[:post][:title]
+    @post[:content] = params[:post][:content]
+    @post.save
+    redirect_to "/posts/#{@post.id}"
   end
 
   def edit
-
+    @post = Post.find(params[:id])
   end
 
   def destroy
-
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to "/posts"
   end
 
   def post_params
