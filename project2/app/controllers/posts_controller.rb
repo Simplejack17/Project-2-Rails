@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+
   def index
     @posts = Post.all
   end
@@ -12,8 +13,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = Post.new(post_params.merge(user: current_user))
     if @post.save
+      flash[:notice] = 'Post Created'
       redirect_to @post
     else
       render :new
