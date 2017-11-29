@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+html {
+  background: url('https://ak0.picdn.net/shutterstock/videos/15997990/thumb/2.jpg')
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

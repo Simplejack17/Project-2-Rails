@@ -1,11 +1,17 @@
 <h2>East Cost Camping</h2>
+<div class="flash_message">
+  <% flash.each do |type, message| %>
+  <p><%= message %></p>
+  <% end %>
+</div>
 
 
 <%= link_to "Create New Post", new_post_path %>
 <ul>
   <% @posts.each do |post| %>
     <li>
-      <%= link_to post.title, post%>
+      <%= link_to post.title, post%> || 
+      <%= post.category %>
     </li>
   <% end %>
 </ul>
