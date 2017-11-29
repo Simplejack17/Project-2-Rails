@@ -1,6 +1,9 @@
 <div class = 'actual_post'>
   <h1><%=@post.title %></h1>
   <%=@post.content%>
+<div>
+  <%= @post.category %>
+</div>
 </div>
   <div class="flash_message">
     <% flash.each do |type, message| %>

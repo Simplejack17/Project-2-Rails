@@ -14,6 +14,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params.merge(user: current_user))
+    @post[:category] = params[:post][:category]
     if @post.save
       flash[:notice] = 'Post Created'
       redirect_to @post
@@ -26,6 +27,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post[:title] = params[:post][:title]
     @post[:content] = params[:post][:content]
+    @post[:category] = params[:post][:category]
     @post.save
     redirect_to "/posts/#{@post.id}"
   end

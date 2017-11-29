@@ -7,7 +7,8 @@
   <%= f.text_field :content %>
 
   <%= f.label :category %>
-  <%= select_tag(:category, options_for_select([['Camping', 1], ['Backpacking', 2], ['Dispersed Camping', 3], ['Trails', 4]]) ) %>
+  <%= f.select(:category, options_for_select(['Camping', 'Backpacking', 'Dispersed Camping', 'Trails'])) %>
+  <!-- <%= f.text_field :category %> -->
 
   <%= f.submit %>
 
