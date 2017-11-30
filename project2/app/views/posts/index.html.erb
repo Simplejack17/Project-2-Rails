@@ -1,33 +1,68 @@
-<h2>East Cost Camping</h2>
+<div class="website_name">
+  <h1>East Coast Camping</h1>
+</div>
+
 <div class="flash_message">
   <% flash.each do |type, message| %>
   <p><%= message %></p>
   <% end %>
 </div>
 
+<div id="categories">
 
 <%= link_to "Create New Post", new_post_path %>
 
-<h1>Camping Posts</h1>
-<ul>
-  <% @posts.each do |post| %>
-    <% if post.category == "Camping" %>
-    <li>
-      <%= link_to post.title, post%> ||
-      <%= post.category %>
-    </li>
+<div class="news_category">
+  <h1 class ="category_title">News</h1>
+  <ul>
+    <% @posts.each do |post| %>
+      <% if post.category == "News" %>
+      <li>
+        <%= link_to post.title, post%> <span style="text-decoration:bold"> - <%= post.category %></span>
+      </li>
+      <% end %>
     <% end %>
-  <% end %>
-</ul>
+  </ul>
+</div>
 
-<h1>Backpacking Posts</h1>
-<ul>
-  <% @posts.each do |post| %>
-    <% if post.category == "Backpacking" %>
+<div class="hiking_category">
+  <h1 class ="category_title">Hiking/Trails</h1>
+  <ul>
+    <% @posts.each do |post| %>
+      <% if post.category == "Backpacking" %>
     <li>
-      <%= link_to post.title, post%> ||
-      <%= post.category %>
+
+      <%= link_to post.title, post%> <span style="text-decoration:bold"> - <%= post.category %></span>
     </li>
     <% end %>
   <% end %>
-</ul>
+  </ul>
+</div>
+
+<div class="camping_category">
+  <h1 class ="category_title">Camping</h1>
+  <ul>
+    <% @posts.each do |post| %>
+    <% if post.category == "Camping" %>
+  <li>
+    <%= link_to post.title, post%> <span style="text-decoration:bold"> - <%= post.category %></span>
+  </li>
+    <% end %>
+    <% end %>
+  </ul>
+</div>
+
+<div class="gear_category">
+  <h1 class ="category_title">Hiking/Camping Gear</h1>
+  <ul>
+    <% @posts.each do |post| %>
+    <% if post.category == "Gear" %>
+    <li>
+      <%= link_to post.title, post%> <span style="text-decoration:bold"> - <%= post.category %></span>
+    </li>
+    <% end %>
+  <% end %>
+  </ul>
+</div>
+
+</div>

@@ -1,6 +1,13 @@
-<h2>New Post</h2>
+<div id="edit_container">
 
-<%= render 'form' %>
-<p>
+
+<h2>Edit Comment</h2>
 <%= link_to "Home", posts_path %>
-</p>
+<%= link_to "Delete", post_comment_path(@post, @comment), method: :delete %>
+<p>
+  <%= render 'form' %>
+  </p>
+
+
+
+</div>

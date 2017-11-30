@@ -13,12 +13,163 @@
  *= require_tree .
  *= require_self
  */
+html,
+body,
+#background {
+  padding: 0;
+  margin: 0;
+}
 
-html {
-  background: url('https://ak0.picdn.net/shutterstock/videos/15997990/thumb/2.jpg')
-    no-repeat center center fixed;
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: scroll;
+}
+
+#background {
+  background: url('https://images3.alphacoders.com/151/151005.jpg') no-repeat
+    center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  /*vw and vh are sizeing based off view port*/
+  position: fixed;
+  z-index: -1;
+  filter: blur(8px);
+  transform: scale(1.1);
+}
+
+#background::before {
+  position: absolute;
+  content: '';
+  /*^ you can determin what text appears with css and it wont create that sudo element on the page if content isnt there*/
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: rgb(230, 230, 230);
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.website_name {
+  position: relative;
+  text-align: center;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+a[href*='users'] {
+  color: white;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 4px 16px;
+}
+
+a[href*='new'] {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px 20px;
+}
+/*this is how you select an element based of its attritbute*/
+/*^ my friend helped me with this*/
+/*the * is so it targets ANYTHING with that word. just the = will target that EXACT word*/
+a[href*='edit'] {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px 20px;
+}
+
+a[data-method*='delete'] {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px 20px;
+}
+
+a[href='/posts'] {
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px 20px;
+}
+
+a[href*='posts']:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+#categories,
+#post_container,
+#edit_container,
+#form_container,
+#new_post_container,
+#new_comment_container,
+#edit_container,
+.flash_message {
+  margin: 0 auto;
+  width: 95%;
+}
+
+.news_category,
+.hiking_category,
+.camping_category,
+.gear_category {
+  position: relative;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 2px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.category_title {
+  color: white;
+}
+.actual_post {
+  position: relative;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 2px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.crud_buttons {
+  position: relative;
+  text-align: center;
+}
+.comment_button {
+  position: relative;
+  margin-bottom: 60px;
+}
+.actual_comment {
+  position: relative;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 2px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+
+#edit_container,
+#new_post_container,
+#new_comment_container {
+  text-align: center;
+}
+.edit_title {
+  position: relative;
+  text-align: center;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.post_title {
+  color: rgb(0, 0, 210);
+}
+.post_content {
+  color: rgb(230, 230, 230);
 }

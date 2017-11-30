@@ -1,30 +1,48 @@
-<div class = 'actual_post'>
-  <h1><%=@post.title %></h1>
-  <%=@post.content%>
-<div>
-  <%= @post.category %>
+<div class="website_name">
+  <h1>East Coast Camping</h1>
 </div>
-</div>
-  <div class="flash_message">
-    <% flash.each do |type, message| %>
-    <p><%= type %>: <%= message %></p>
-    <% end %>
+<div class="flash_message">
+  <% flash.each do |type, message| %>
+  <p><%= type %>: <%= message %></p>
+  <% end %>
 </div>
 
-<%= link_to "Add new comment", new_post_comment_path(@post) %>
-<%= link_to "Home", posts_path %>
-<% if @post.user == current_user %>
-<%= link_to "Edit Post", edit_post_path(@post) %>
-<%= link_to "Delete Post", post_path(@post), method: :delete %>
-<% end %>
+<div id="post_container">
+
+<div class="crud_buttons">
+  <%= link_to "Home", posts_path %>
+  <% if @post.user == current_user %>
+  <%= link_to "Edit Post", edit_post_path(@post) %>
+  <%= link_to "Delete Post", post_path(@post), method: :delete %>
+  <% end %>
+</div>
+
+<div class="post_category">
+  <%= @post.category %>
+</div>
+
+<div class ='actual_post'>
+  <h4 class="post_title"><%=@post.title %></h1>
+  <p class="post_content">
+    <%=@post.content%>
+  </p>
+</div>
+
+<div class="comment_button">
+  <%= link_to "New Comment", new_post_comment_path(@post) %>
+</div>
+
+
 
 
 <% @post.comments.each do |comment| %>
-      <div>
-          <%= comment.comment_content %>
-      </div>
-      <% if comment.user == current_user %>
-          <%= link_to "Edit", edit_post_comment_path(@post, comment) %>
-          <%= link_to "Delete", post_comment_path(@post, comment), method: :delete %>
-      <% end %>
+  <div class = "actual_comment">
+    <%= comment.comment_content %>
+  </div>
+    <% if comment.user == current_user %>
+      <%= link_to "Edit", edit_post_comment_path(@post, comment) %>
+      <%= link_to "Delete", post_comment_path(@post, comment), method: :delete %>
+  <% end %>
 <% end %>
+
+</div>

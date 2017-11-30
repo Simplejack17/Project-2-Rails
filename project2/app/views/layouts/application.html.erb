@@ -6,9 +6,14 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Poppins|Open+Sans" rel="stylesheet">
   </head>
 
   <body>
+<div id="background">
+
+</div>
+<div id = "wrapper">
     <% if !current_user %>
       <%= link_to "Sign up", new_user_registration_path %>
       <%= link_to "Sign in", new_user_session_path %>
@@ -17,5 +22,6 @@
       <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
     <% end %>
     <%= yield %>
+  </div>
   </body>
 </html>

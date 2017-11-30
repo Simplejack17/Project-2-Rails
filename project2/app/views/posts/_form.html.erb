@@ -1,3 +1,6 @@
+<div id="form_container">
+
+
 <%= form_for @post do |f| %>
 
   <%= f.label :title %>
@@ -7,9 +10,10 @@
   <%= f.text_field :content %>
 
   <%= f.label :category %>
-  <%= f.select(:category, options_for_select(['Camping', 'Backpacking', 'Dispersed Camping', 'Trails'])) %>
-  <!-- <%= f.text_field :category %> -->
+  <%= f.select(:category, options_for_select(['News', 'Hiking', 'Camping', 'Gear'])) %>
 
   <%= f.submit %>
 
 <% end %>
+
+</div>
