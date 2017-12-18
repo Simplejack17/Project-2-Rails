@@ -19,3 +19,4 @@ test_post2 = Post.create(user: jake, title: "Test2", content: "test content2")
 
 test_comment1 = test_post1.comments.create(user: jake, comment_content: "jakes content")
 # Comment.create([{user: jake, comment_content: "test", post_id: "test comment ID"}])
+# Generally avoid leaving out commented-out / unused code in your master branch

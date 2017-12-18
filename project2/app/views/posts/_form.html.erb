@@ -10,10 +10,12 @@
   <%= f.text_field :content %>
 
   <%= f.label :category %>
-  <%= f.select(:category, options_for_select(['News', 'Hiking', 'Camping', 'Gear'])) %>
+  <%= f.select(:category, options_for_select({ News: 'News', Hiking: 'Hiking', Camping: 'Camping', Gear: 'Gear'})) %>
 
   <%= f.submit %>
 
 <% end %>
 
 </div>
+
+<!-- Good job setting up a post form as a partial view -->
